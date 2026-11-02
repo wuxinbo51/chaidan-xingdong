@@ -14,7 +14,7 @@
 @media(max-width:370px){#restore157 .keys{gap:5px!important}#restore157 .key{padding:8px 1px!important;min-height:122px!important}#restore157 .seal{width:49px!important;height:49px!important;font-size:28px!important}#restore157 .header button{padding:6px!important}#restore157 .outer{padding:8px!important}#restore157 .device{padding:9px!important}}
 
 
-/* V16.2: first-time A/B walkthrough and reversible blackbox chips */
+/* V16.3: onboarding, mobile hold-to-swap, full leaderboard */
 #restore157 .tabs button.coach-target{border-color:#ffe5a5;background:#207d82;box-shadow:0 0 0 2px #ffe5a569,0 0 17px #9fffe777;animation:r162Pulse 1.25s ease-in-out infinite;position:relative}
 @keyframes r162Pulse{0%,100%{box-shadow:0 0 0 2px #ffe5a555,0 0 10px #9fffe722}50%{box-shadow:0 0 0 4px #ffe5a5a0,0 0 25px #9fffe799}}
 #restore157 .coach-banner{border:1px solid #a0f4d1;background:linear-gradient(120deg,#1e695d,#244962);border-radius:10px;padding:13px;color:#eafff5;font-size:13px;line-height:1.7;margin-bottom:12px}
@@ -22,15 +22,24 @@
 #restore157 .modalin.coach{border-color:#a2f1cd;background:linear-gradient(#2b5671,#1a324d);box-shadow:0 12px 35px #0009}
 #restore157 .coach-steps{display:flex;align-items:center;justify-content:center;gap:6px;margin:12px 0;color:#c3f9dc;font-weight:800}
 #restore157 .coach-steps span{background:#245d61;border:1px solid #95d8be;border-radius:7px;padding:5px 9px}
-#restore157 .slots button{position:relative}
+#restore157 .slots button{position:relative;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+#restore157 .chips button{touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+#restore157 .slots button.drop-ready{background:#3c8074!important;border:3px solid #feefad!important;box-shadow:0 0 0 3px #ffe9a957,0 0 18px #b3ffe488}
+#restore157 .slots button.drag-origin{opacity:.42}
+.drag-ghost-v163{position:fixed;pointer-events:none;z-index:99999;display:grid;place-items:center;width:71px;height:71px;background:#2b746f;border:3px solid #ffe7ad;border-radius:13px;color:#ffffff;font:36px system-ui;box-shadow:0 10px 28px #0008;transform:translate(-50%,-50%)}
+#restore157 .rookie-hint{background:#25614f;border:2px solid #b5ffda;border-radius:11px;padding:13px;margin:10px 0;color:#e7fff6;font-size:13px;line-height:1.7}
+#restore157 .rankcount{text-align:center;font-size:13px;color:#c7ffe5;margin-bottom:8px}
+#restore157 .rankmore{margin-top:10px}
+#restore157 .leader .your-rank{color:#ffe2a5;font-weight:700}
+#restore157 .leader{gap:9px}
 #restore157 .slots button.filled{border-color:#a8f3d2;background:#30647a;padding-bottom:17px}
-#restore157 .slots button.filled:after{content:'↩ 点此撤回';position:absolute;bottom:3px;left:0;right:0;font-size:10px;white-space:nowrap;color:#b7ffdb}
+#restore157 .slots button.filled:after{content:'↩ 点击撤回 · 长按拖换';position:absolute;bottom:3px;left:0;right:0;font-size:10px;white-space:nowrap;color:#b7ffdb}
 #restore157 .chips button.used{border-color:#8feac4;background:#245a55;box-shadow:inset 0 0 0 1px #b5ffe7}
 #restore157 .chips button.used:after{content:'↩';display:block;font-size:12px;color:#a3f5d0;line-height:12px}
 #restore157 .revert-hint{background:#20584e;border-color:#93efc2}
 @media(prefers-reduced-motion:reduce){#restore157 .tabs button.coach-target{animation:none}}
 </style></head><body>
-<div class="sitebar"><div class="sitebrand"><strong>💣 拆弹行动</strong><small>V16.2 · 手机 / 电脑全平台试玩</small></div><div class="siteactions"><button id="shareGame" class="sharebtn">🔗 分享挑战</button></div></div>
+<div class="sitebar"><div class="sitebrand"><strong>💣 拆弹行动</strong><small>V16.3 · 手机 / 电脑全平台试玩</small></div><div class="siteactions"><button id="shareGame" class="sharebtn">🔗 分享挑战</button></div></div>
 <div class="site"><div class="gameholder"><div id="restore157" style="font:14px/1.5 system-ui,-apple-system,'PingFang SC',sans-serif;color:#eafaff;max-width:480px;margin:auto">
 <style>
 #restore157 *{box-sizing:border-box}#restore157 button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation}#restore157 button:disabled{opacity:.4;cursor:default}#restore157 .game{position:relative;background:#12263e;border:1px solid #789cbd;border-radius:17px;overflow:hidden;isolation:isolate}#restore157 .header{display:flex;align-items:center;justify-content:space-between;background:#284867;padding:11px;font-size:12px}#restore157 .header button{padding:7px 10px;background:#345875;border:1px solid #7495b6;border-radius:8px;font-size:11px}#restore157 .outer{padding:11px;background:linear-gradient(135deg,#344f6f,#1c304b)}#restore157 .hud{display:flex;align-items:center;justify-content:space-between;border:1px solid #91adca;border-radius:11px;background:#162f4c;padding:11px}#restore157 .hud strong{display:block;font-size:33px;color:#bbfaff;font-variant-numeric:tabular-nums}#restore157 small,#restore157 .muted{font-size:11px;color:#d1e5f5}#restore157 .progress{display:flex;gap:5px;margin:11px 0}#restore157 .progress i{height:7px;flex:1;border:1px solid #7395b6;border-radius:8px;background:#48617b}#restore157 .progress .done{background:#8decbe}#restore157 .progress .next{background:#ffe0a0}#restore157 .device{border:2px solid #9cb8d5;background:linear-gradient(#315475,#203753);box-shadow:0 5px #0b1a2c,inset 0 2px #ffffff22;border-radius:13px;padding:12px;min-height:240px}#restore157 .caption{letter-spacing:1px;font-size:11px;color:#cdeaff;padding-bottom:12px;border-bottom:1px solid #789bb8;margin-bottom:12px}#restore157 .tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px;background:#132943}#restore157 .tabs button{border:1px solid #8aabca;border-radius:10px;background:#345c7e;padding:12px 2px;font-weight:600}#restore157 .tabs .active{background:#2e8a7b;border-color:#b8ffdc}#restore157 .foot{padding:12px}#restore157 h2{font-size:22px;margin:10px 0;color:white}#restore157 h3{font-size:17px;margin:8px 0;color:white}#restore157 p{font-size:13px;line-height:1.8;color:#ddecfa;margin:10px 0}#restore157 .box{padding:11px;border:1px solid #7b9fbc;background:#274865;border-radius:11px;margin:10px 0;line-height:1.7;font-size:12px}#restore157 .green{background:#205e50;border-color:#9ef5cc}#restore157 .gold{background:#654f39;border-color:#f3d197}#restore157 .danger{background:#654045;border-color:#f3adb3}#restore157 .btn{display:block;width:100%;padding:12px;margin:10px 0;text-align:center;border-radius:9px;border:1px solid #88a8c7;background:#375a77;font-weight:800}#restore157 .primary{background:linear-gradient(105deg,#adffe0,#bed9ff);color:#154057!important;border:0}#restore157 .easybtn{background:linear-gradient(105deg,#ffe3b4,#ffccd7);color:#604432!important;border:0}#restore157 .hero{text-align:center;padding:22px 4px}#restore157 .hero .emoji{font-size:54px}#restore157 input{display:block;width:100%;background:#143047;color:#fff;border:1px solid #83a5c5;padding:11px;border-radius:8px;margin:8px 0;font:inherit}#restore157 .identity-card{border:2px solid #9bffe0;background:linear-gradient(130deg,#26665d,#173d57);border-radius:14px;padding:16px 14px;margin:3px 0 16px;box-shadow:0 0 0 3px #8fffd025,0 12px 24px #0a1c2e4a}
@@ -71,7 +80,7 @@
 #restore157 .wires button:disabled{opacity:1}
 #restore157 .cutProgress{text-align:center;padding:8px;border-radius:8px;background:#244562;border:1px solid #739fc3;margin-top:8px;font-weight:850}
 </style>
-<div class="game"><div class="header"><b>💣 拆弹行动 V16.2</b><div><button data-a="rank">🏆 排名</button> <button data-a="home">大厅</button></div></div><div class="outer"><div class="hud" id="rHud"></div><div class="progress" id="rProgress"></div><div class="device"><div class="caption" id="rCaption"></div><div id="rView"></div></div></div><div class="tabs" id="rTabs"><button data-a="tab" data-v="A">A · 操作</button><button data-a="tab" data-v="B">B · 情报</button></div><div class="foot" id="rFoot"></div><div id="rModal"></div></div>
+<div class="game"><div class="header"><b>💣 拆弹行动 V16.3</b><div><button data-a="rank">🏆 排名</button> <button data-a="home">大厅</button></div></div><div class="outer"><div class="hud" id="rHud"></div><div class="progress" id="rProgress"></div><div class="device"><div class="caption" id="rCaption"></div><div id="rView"></div></div></div><div class="tabs" id="rTabs"><button data-a="tab" data-v="A">A · 操作</button><button data-a="tab" data-v="B">B · 情报</button></div><div class="foot" id="rFoot"></div><div id="rModal"></div></div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js" defer></script>
 <script>
 (()=>{
@@ -102,57 +111,81 @@ function manualCopyInvite(){const field=E('rInviteUrl');let copied=false;try{fie
 function copyInviteLink(){const url=makeInviteLink();if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(()=>inviteStatus('✅ 链接已复制，直接粘贴给好友！')).catch(manualCopyInvite)}else manualCopyInvite();}
 async function shareInviteLink(){const url=makeInviteLink();const data={title:'💣 拆弹行动 · 好友挑战',text:`我在拆弹行动拿到${g.final}分！来挑战我的成绩，看看谁能上榜！`,url};if(typeof navigator.share==='function'){try{await navigator.share(data);inviteStatus('✅ 已打开分享菜单');return}catch(e){if(e.name==='AbortError')return}}copyInviteLink();}
 const storageKey='defuse-action-v157-leaderboard';
+const rookieKey='defuse-action-ever-started-v163';function isRookie(){try{return localStorage.getItem(rookieKey)!=='yes'}catch(e){return true}}
 function loadScores(){try{const a=JSON.parse(localStorage.getItem(storageKey)||'[]');return Array.isArray(a)?a.filter(x=>x&&typeof x.name==='string'&&typeof x.score==='number'&&Number.isFinite(x.score)).slice(0,80):[]}catch(e){return []}}
 function persistScores(){try{localStorage.setItem(storageKey,JSON.stringify(board.slice(0,80)))}catch(e){}}
 // 多人在线榜配置：只填写项目 URL 和 publishable/anon 公钥，绝不要填写 service_role 密钥。
 const SUPABASE_URL = 'https://snipfqffnfhxiuehjxqh.supabase.co';
 const SUPABASE_PUBLIC_KEY = 'sb_publishable_8Fg_WIsT9Z5so1Lws1w4Hw_AzeJdVJS';
 const onlineConfigOK = SUPABASE_URL.startsWith('https://') && !SUPABASE_URL.includes('__SUPABASE_') && !SUPABASE_PUBLIC_KEY.includes('__SUPABASE_');
-let cloudDB=null,cloudInitPromise=null,cloudUid=null,cloudRows=[],cloudState=onlineConfigOK?'loading':'unconfigured',cloudMessage=onlineConfigOK?'在线排行榜连接中…':'尚未配置线上数据库，本地成绩仍然有效。',cloudLatestSubmit='';
+// Public read uses anon RLS; each nickname gets an independent anonymous identity on the same device.
+let cloudReadDB=null,cloudPlayers=new Map(),cloudRows=[],cloudCount=0,cloudPageSize=100,cloudLoadingMore=false,
+cloudState=onlineConfigOK?'loading':'unconfigured',cloudMessage=onlineConfigOK?'在线排行榜连接中…':'尚未配置线上数据库，本地成绩仍然有效。',cloudLatestSubmit='';
 function cloudUpdateScreen(){if(g&&['rank','win'].includes(g.page))render()}
-async function cloudClient(){
- if(!onlineConfigOK)return null;
- if(cloudInitPromise)return cloudInitPromise;
- cloudInitPromise=(async()=>{
-  if(!window.supabase || !window.supabase.createClient)throw Error('排行榜 SDK 未加载，请检查网络');
-  if(!cloudDB)cloudDB=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLIC_KEY,{auth:{autoRefreshToken:true,persistSession:true,detectSessionInUrl:false}});
-  const result=await cloudDB.auth.getSession();if(result.error)throw result.error;
-  let session=result.data.session;
-  if(!session){const signed=await cloudDB.auth.signInAnonymously();if(signed.error)throw signed.error;session=signed.data.session;}
-  if(!session?.user?.id)throw Error('无法创建匿名玩家身份，请在 Supabase 开启 Anonymous Sign-Ins');
-  cloudUid=session.user.id;return cloudDB;
- })().catch(e=>{cloudInitPromise=null;throw e});
- return cloudInitPromise;
+function readClient(){
+ if(!window.supabase?.createClient)throw Error('排行榜 SDK 未加载，请检查网络');
+ if(!cloudReadDB)cloudReadDB=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLIC_KEY,{auth:{autoRefreshToken:false,persistSession:false,detectSessionInUrl:false}});
+ return cloudReadDB;
+}
+async function cloudClient(name){
+ const id=String(name||'').trim().slice(0,12);
+ if(!id)throw Error('先填写玩家昵称');
+ if(cloudPlayers.has(id))return cloudPlayers.get(id);
+ const task=(async()=>{
+  if(!window.supabase?.createClient)throw Error('排行榜 SDK 未加载，请检查网络');
+  const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLIC_KEY,{auth:{autoRefreshToken:true,persistSession:true,detectSessionInUrl:false,storageKey:'defuse-v163-user-'+encodeURIComponent(id)}});
+  let {data,error}=await db.auth.getSession();if(error)throw error;
+  let session=data.session;
+  if(!session){const sign=await db.auth.signInAnonymously();if(sign.error)throw sign.error;session=sign.data.session;}
+  if(!session?.user?.id)throw Error('匿名玩家登录失败，请确认已启用 Anonymous Sign-Ins');
+  return {db,userId:session.user.id};
+ })().catch(e=>{cloudPlayers.delete(id);throw e});
+ cloudPlayers.set(id,task);return task;
 }
 async function cloudFetch(){
  if(!onlineConfigOK){cloudState='unconfigured';cloudMessage='线上榜尚未配置，以下是本机成绩。';cloudUpdateScreen();return;}
- cloudState='loading';cloudMessage='正在同步全服排行榜…';cloudUpdateScreen();
+ cloudState='loading';cloudMessage='正在同步所有玩家的成绩…';cloudUpdateScreen();
  try{
-  const db=await cloudClient();const {data,error}=await db.from('game_scores').select('user_id,name,score,mode,updated_at').order('score',{ascending:false}).order('updated_at',{ascending:true}).limit(100);
+  const db=readClient();
+  const {data,error,count}=await db.from('game_scores').select('user_id,name,score,mode,updated_at',{count:'exact'}).order('score',{ascending:false}).order('updated_at',{ascending:true}).range(0,cloudPageSize-1);
   if(error)throw error;
-  cloudRows=Array.isArray(data)?data:[];cloudState='ready';cloudMessage='已连接全服排行榜 · 展示前100名';cloudUpdateScreen();
+  cloudRows=Array.isArray(data)?data:[];
+  cloudCount=Number.isFinite(count)?count:cloudRows.length;
+  cloudState='ready';cloudMessage='✅ 全服共 '+cloudCount+' 位上榜玩家，每人显示历史最高成绩';cloudUpdateScreen();
  }catch(e){cloudState='error';cloudMessage='线上榜暂时不可用：'+String(e.message||e).slice(0,80)+'；正在显示本地成绩。';cloudUpdateScreen();}
+}
+async function cloudFetchMore(){
+ if(cloudState!=='ready'||cloudLoadingMore||cloudRows.length>=cloudCount)return;
+ cloudLoadingMore=true;cloudUpdateScreen();
+ try{
+  const {data,error}=await readClient().from('game_scores').select('user_id,name,score,mode,updated_at').order('score',{ascending:false}).order('updated_at',{ascending:true}).range(cloudRows.length,cloudRows.length+cloudPageSize-1);
+  if(error)throw error;
+  cloudRows.push(...(data||[]));
+  if(!data?.length)cloudCount=cloudRows.length;
+ }catch(e){cloudMessage='加载更多成绩失败：'+String(e.message||e).slice(0,70);}
+ finally{cloudLoadingMore=false;cloudUpdateScreen();}
 }
 async function cloudSave(result){
  if(!onlineConfigOK){cloudLatestSubmit='未配置线上榜，成绩已保存在本机';return;}
  cloudLatestSubmit='正在提交线上成绩…';cloudUpdateScreen();
  try{
-  const db=await cloudClient();
-  const {data:old,error:checkErr}=await db.from('game_scores').select('score').eq('user_id',cloudUid).maybeSingle();
+  const {db,userId}=await cloudClient(result.name);
+  const {data:old,error:checkErr}=await db.from('game_scores').select('score').eq('user_id',userId).maybeSingle();
   if(checkErr)throw checkErr;
   if(!old||result.score>old.score){
-   const {error}=await db.from('game_scores').upsert({user_id:cloudUid,name:result.name,score:result.score,mode:result.mode},{onConflict:'user_id'});
+   const {error}=await db.from('game_scores').upsert({user_id:userId,name:result.name,score:result.score,mode:result.mode},{onConflict:'user_id'});
    if(error)throw error;
    cloudLatestSubmit='✅ 已成功提交线上成绩';
   }else cloudLatestSubmit='✅ 已保留你的线上最高分 '+old.score;
   await cloudFetch();
  }catch(e){cloudLatestSubmit='网络提交未成功：'+String(e.message||e).slice(0,85)+'。本地成绩仍已保存';cloudUpdateScreen();}
 }
+
 let code='',nickname=priorNickname(),board=loadScores(),g={page:'menu'},timer=null,back='menu',wasFrozen=false,pulseDown=null;
 function generate(seed){let r=ran(+seed+12),order=mix([0,1,2,3],r),edges=[[],[],[],[]];order.forEach((id,i)=>edges[id]=i===3?[id]:[id,order[i+1]]);let easyEdges=edges.map(e=>[...e]);easyEdges[order[1]]=[order[1]];let initial=r(16),actions=mix([0,1,2,3],r).slice(0,2+r(2));const targetFor=edges=>{let mask=initial;for(let a of actions)for(let j of edges[a])mask^=1<<j;return mask};if(targetFor(edges)===initial)actions=[order[0]];const color={mask:initial,target:targetFor(edges),edges,easyEdges,actions,moves:0};r=ran(+seed+72);let pool=mix(GL.map((_,i)=>i),r).slice(0,5),secret=mix(pool,r).slice(0,3),wrong=pool.filter(x=>!secret.includes(x));let black={pool,secret,easyPool:mix([...secret,wrong[0]],r),inc:secret[r(3)],exc:wrong[1],slots:[null,null,null],focus:null,reports:[],best:-1,stalls:0,taunted:false,defied:false,king:false,foundAll:false};r=ran(+seed+119);let links=mix([[0,1],[1,2],[0,2]],r),vopts=[];for(let a=0;a<3;a++)for(let b=0;b<3;b++)for(let c=0;c<3;c++)if(a+b+c>=2&&a+b+c<=5)vopts.push([a,b,c]);let wanted=vopts[r(vopts.length)],volt={links,knobs:[0,0,0],values:[0,0,0],goal:[0,1,2].map(i=>links.reduce((s,x,j)=>s+(x.includes(i)?wanted[j]:0),0))};let deck,rounds;r=ran(+seed+276);for(let attempts=0;attempts<150;attempts++){deck=mix(Array.from({length:9},(_,i)=>i),r).slice(0,6).map((p,id)=>({id,c:Math.floor(p/3),sh:p%3,mark:r(3)+1}));let rules=[];for(let i=0;i<3;i++)rules.push({text:`颜色是<b>${KC[i]}</b>`,f:x=>x.c===i,type:'c'},{text:`颜色不是<b>${KC[i]}</b>`,f:x=>x.c!==i,type:'c'},{text:`图案是<b>${SH[i]}</b>`,f:x=>x.sh===i,type:'s'},{text:`图案不是<b>${SH[i]}</b>`,f:x=>x.sh!==i,type:'s'},{text:`刻痕有<b>${i+1}</b>条`,f:x=>x.mark===i+1,type:'m'},{text:`刻痕不是<b>${i+1}</b>条`,f:x=>x.mark!==i+1,type:'m'});
 function round(want,omit){let available=deck.filter(x=>x.id!==omit),opts=[];for(let i=0;i<rules.length;i++)for(let j=i+1;j<rules.length;j++)for(let k=j+1;k<rules.length;k++){let p=[rules[i],rules[j],rules[k]];if(new Set(p.map(x=>x.type)).size!==3)continue;let fitting=available.filter(x=>p.filter(y=>y.f(x)).length===want);if(fitting.length===1)opts.push({answer:fitting[0].id,want,rules:p.map(y=>y.text)})}return opts.length?opts[r(opts.length)]:null;}let first=round(2,-1),second=first?round(1,first.answer):null;if(first&&second){rounds=[first,second];break;}}
 if(!rounds)throw Error('key generation');let key={deck,rounds,round:0,selected:null,locked:[],phase:'choose',errors:0,coolUntil:0,pulse:0,pulseAt:0,lastPulse:0,cuts:0,order:mix([0,1,2],ran(+seed+712)),leverAt:0,window:25};return {color,black,volt,key,events:mix(['battery','leak','signal','alarm'],ran(+seed+918))};}
-function begin(easy){code=randomMissionCode(code);try{if(location.protocol==='https:'||location.protocol==='http:'){const u=new URL(location.href);u.searchParams.delete('seed');history.replaceState(null,'',u.href)}}catch(e){}if(timer)clearInterval(timer);g={...generate(code),page:'map',role:'A',part:null,name:nickname,code,started:Date.now(),frozen:0,limit:easy?390:300,left:easy?390:300,bonus:0,penalty:0,score:0,done:[],last:null,gain:0,notice:'',event:null,eventIndex:0,shields:0,intel:0,usedEasy:easy,allEasy:easy,easy:{color:easy,black:easy,volt:easy,key:easy},taunt:false};if(easy){g.color.edges=g.color.easyEdges;recalcTarget();g.key.window=35;}timer=setInterval(tick,100);render()}
+function begin(easy){try{localStorage.setItem(rookieKey,'yes')}catch(e){}code=randomMissionCode(code);try{if(location.protocol==='https:'||location.protocol==='http:'){const u=new URL(location.href);u.searchParams.delete('seed');history.replaceState(null,'',u.href)}}catch(e){}if(timer)clearInterval(timer);g={...generate(code),page:'map',role:'A',part:null,name:nickname,code,started:Date.now(),frozen:0,limit:easy?390:300,left:easy?390:300,bonus:0,penalty:0,score:0,done:[],last:null,gain:0,notice:'',event:null,eventIndex:0,shields:0,intel:0,usedEasy:easy,allEasy:easy,easy:{color:easy,black:easy,volt:easy,key:easy},taunt:false};if(easy){g.color.edges=g.color.easyEdges;recalcTarget();g.key.window=35;}timer=setInterval(tick,100);render()}
 function recalcTarget(){let c=g.color;c.target=c.mask;for(let i of c.actions)for(let j of c.edges[i])c.target^=1<<j;if(c.target===c.mask)for(let j of c.edges[0])c.target^=1<<j}function remaining(){return g.limit+g.bonus-g.penalty-((g.frozen||Date.now())-g.started)/1000}function freeze(){if(!g.frozen){g.left=remaining();g.frozen=Date.now()}}function resume(){if(g.frozen){g.started+=Date.now()-g.frozen;g.frozen=0;g.left=remaining()}}function cooldown(){return Math.max(0,(g.key.coolUntil-Date.now())/1000)}function needle(){let p=g.easy.key?2800:2200,t=((Date.now()-g.key.pulseAt)%p)/p;return t<.5?t*2:2-t*2}
 function hitAtPress(){const track=E('rNeedle'),safe=R.querySelector('.meter .safe');if(!track||!safe)return null;const t=track.getBoundingClientRect(),s=safe.getBoundingClientRect();return (t.left+t.width/2)>=s.left-2&&(t.left+t.width/2)<=s.right+2}
 function feedbackBar(){return g.key.lastFeedback?`<div class="resultBar ${g.key.lastFeedbackOK?'':'wrong'}" role="status" aria-live="polite">${g.key.lastFeedback}</div>`:''}
@@ -163,6 +196,56 @@ function easyMode(){if(g.page!=='play'||g.easy[g.part])return;g.easy[g.part]=tru
 function completed(part){if(g.done.includes(part))return;if(g.guide)endGuide();let before=g.score,first=g.done.length===0;g.done.push(part);g.score+=g.easy[part]?170:220;if(part==='color')g.shields+=first?2:1;if(part==='black'){g.intel+=first?2:1;if(!g.easy.black){g.score+=140;if(g.black.taunted&&g.black.defied){g.score+=300;g.black.king=true}}}if(part==='volt')g.bonus+=first?35:20;g.last=part;g.gain=g.score-before;g.part=null;g.event=g.done.length===3?null:g.events[g.eventIndex++];g.page='clear';g.notice='';freeze();render()}
 function crisis(n){let txt='';if(g.event==='battery'){if(n===0){g.bonus+=25;g.key.window=Math.max(15,g.key.window-4);txt='备用电池已接入，获得25秒；断电窗口少4秒。';}else{g.key.window+=5;txt='保留电池，断电窗口增加5秒。'}}if(g.event==='leak'){if(n===0){g.penalty+=12;g.shields++;txt='修复成功，获得1次保护。';}else{g.key.window-=5;txt='跳过修复，断电窗口减少5秒。'}}if(g.event==='signal'){if(n===0){g.penalty+=10;g.intel++;txt='通信修复，获得1次情报。';}else{g.score-=85;txt='冒险继续，扣85分。'}}if(g.event==='alarm'){if(n===0){g.penalty+=12;g.score+=120;txt='关警报，得120分。';}else{g.score-=40;txt='跳过警报，扣40分。'}}g.event=null;g.notice=txt;g.page='map';render()}
 function colorPress(i){let c=g.color;c.moves++;for(let j of c.edges[i])c.mask^=1<<j;if(c.mask===c.target){if(!g.easy.color)g.score+=c.moves<=4?160:50;completed('color');return}g.notice='操作了'+COLORS[i]+'色开关';render()}
+// Drag: long-press a filled slot on touch (or drag with mouse), drop on any other slot to swap.
+// Lower symbols can also be dragged into a slot. Simple tap-to-undo is preserved.
+let slotDrag=null,slotDragTimer=null,slotDragGhost=null,suppressSlotClickUntil=0,suppressSlotClickElement=null;
+function slotAtPoint(x,y){let el=document.elementFromPoint(x,y),b=el?.closest('#restore157 .slots button[data-a="slot"]');return b&&R.contains(b)?b:null}
+function highlightSlot(target){R.querySelectorAll('.slots button').forEach(b=>b.classList.toggle('drop-ready',b===target));}
+function updateGhost(x,y){if(slotDragGhost){slotDragGhost.style.left=x+'px';slotDragGhost.style.top=y+'px';}}
+function activateSlotDrag(){if(!slotDrag||slotDrag.active)return;slotDrag.active=true;
+ slotDragGhost=document.createElement('div');slotDragGhost.className='drag-ghost-v163';slotDragGhost.textContent=GL[slotDrag.symbol];document.body.appendChild(slotDragGhost);
+ if(slotDrag.originKind==='slot')slotDrag.sourceEl.classList.add('drag-origin');
+ updateGhost(slotDrag.x,slotDrag.y);
+}
+function disposeSlotDrag(){clearTimeout(slotDragTimer);slotDragTimer=null;if(slotDragGhost){slotDragGhost.remove();slotDragGhost=null;}highlightSlot(null);if(slotDrag?.sourceEl)slotDrag.sourceEl.classList.remove('drag-origin');slotDrag=null;}
+R.addEventListener('pointerdown',e=>{
+ if(g.page!=='play'||g.part!=='black'||g.role!=='B'||g.taunt||g.guide?.stage==='intro')return;
+ if(e.button!==0&&e.pointerType==='mouse')return;
+ let source=e.target.closest('button[data-a="slot"],button[data-a="chip"]');if(!source||!R.contains(source))return;
+ let originKind=source.dataset.a,originIndex=+source.dataset.v,symbol=originKind==='slot'?g.black.slots[originIndex]:originIndex;
+ if(symbol==null)return;
+ slotDrag={pointerId:e.pointerId,sourceEl:source,originKind,originIndex,symbol,startX:e.clientX,startY:e.clientY,x:e.clientX,y:e.clientY,pointerType:e.pointerType,active:false,aborted:false};
+ if(e.pointerType==='touch')slotDragTimer=setTimeout(()=>{if(slotDrag&&!slotDrag.aborted)activateSlotDrag()},300);
+ try{source.setPointerCapture(e.pointerId)}catch(_){}
+},{passive:true});
+document.addEventListener('pointermove',e=>{
+ let d=slotDrag;if(!d||e.pointerId!==d.pointerId)return;d.x=e.clientX;d.y=e.clientY;
+ const delta=Math.hypot(e.clientX-d.startX,e.clientY-d.startY);
+ if(!d.active){if(e.pointerType==='mouse'&&delta>7)activateSlotDrag();else if(e.pointerType!=='mouse'&&delta>12){d.aborted=true;clearTimeout(slotDragTimer);} }
+ if(d.active){e.preventDefault();updateGhost(d.x,d.y);highlightSlot(slotAtPoint(d.x,d.y));}
+},{passive:false});
+document.addEventListener('pointerup',e=>{
+ const d=slotDrag;if(!d||e.pointerId!==d.pointerId)return;
+ if(!d.active){disposeSlotDrag();return;}
+ const dest=slotAtPoint(e.clientX,e.clientY);let target=dest?+dest.dataset.v:-1;
+ const b=g.black,from=d.originIndex,kind=d.originKind,symbol=d.symbol;
+ suppressSlotClickUntil=Date.now()+350;suppressSlotClickElement=d.sourceEl;
+ disposeSlotDrag();e.preventDefault();
+ if(target<0)return;
+ if(kind==='slot'&&target===from)return;
+ if(kind==='slot'){
+   [b.slots[from],b.slots[target]]=[b.slots[target],b.slots[from]];
+   g.notice='↔️ 已把 '+GL[symbol]+' 拖到第 '+(target+1)+' 位，两个密码槽已交换。';
+ }else{
+   let at=b.slots.indexOf(symbol),old=b.slots[target];if(at===target)return;
+   if(at>=0)b.slots[at]=old;b.slots[target]=symbol;
+   g.notice='✅ 已拖入 '+GL[symbol]+'，可以继续长按交换。';
+ }
+ b.focus=null;render();
+},{passive:false});
+document.addEventListener('pointercancel',e=>{if(slotDrag&&e.pointerId===slotDrag.pointerId)disposeSlotDrag()});
+R.addEventListener('click',e=>{if(Date.now()<suppressSlotClickUntil&&e.target.closest('button[data-a="slot"],button[data-a="chip"]')===suppressSlotClickElement){e.preventDefault();e.stopImmediatePropagation();} },true);
+R.addEventListener('contextmenu',e=>{if(e.target.closest('.slots button,.chips button'))e.preventDefault()});
 function slot(i){let b=g.black,old=b.slots[i];
  if(b.focus!==null&&b.focus!==i){[b.slots[b.focus],b.slots[i]]=[b.slots[i],b.slots[b.focus]];b.focus=null;g.notice='↔️ 符号已移到所选位置。';}
  else if(old!==null){b.slots[i]=null;b.focus=null;g.notice='↩️ '+GL[old]+' 已从密码槽撤回，随时可以重新选。';}
@@ -196,9 +279,19 @@ if(k.cuts===3){g.done.push('key');g.score+=g.easy.key?320:440;g.left=remaining()
 
 function points(){return Math.max(0,Math.round(g.score+Math.max(0,g.left)*(g.usedEasy?.55:2)))}function ranked(){return [...board].sort((a,b)=>b.score-a.score)}function save(){let p=points(),mode=g.usedEasy?'含简单':'全程经典',old=board.find(x=>x.name===nickname);if(!old)board.push({name:nickname,score:p,mode});else if(p>old.score){old.score=p;old.mode=mode}g.final=p;g.rank=ranked().findIndex(x=>x.name===nickname)+1;persistScores();cloudSave({name:nickname,score:p,mode});}
 function lamps(mask){return `<div class="lamps">${COLORS.map((x,i)=>`<div class="lamp ${mask&(1<<i)?'on':''}" style="--c:${['#ff8391','#80cbff','#ffe19f','#7ff0c0'][i]}"><i class="bulb"></i>${x}色<br>${mask&(1<<i)?'亮':'灭'}</div>`).join('')}</div>`}function reports(){let b=g.black;if(!b.reports.length)return box('暂无检测报告。先到B面板提交一个组合。');return b.reports.slice(-5).reverse().map(a=>`<div class="report"><span style="font-size:20px">${a.arr.map(i=>GL[i]).join(' ')}</span><span>有 <strong>${a.exact}</strong> 个位置正确<br>有 <strong>${a.total}</strong> 个符号正确</span></div>`).join('')}
-function render(){H.innerHTML=g.started?`<div><small>拆弹倒计时</small><strong id="rTime">${fmt(g.left)}</strong></div><div style="text-align:right"><small>${esc(g.name)}<br>完成 ${g.done.length}/4<br>🛡️ ${g.shields}　🔍 ${g.intel}</small></div>`:'<div><small>MISSION TIME</small><strong>拆弹行动</strong></div><small>V16.2</small>';P.innerHTML=[0,1,2,3].map(i=>`<i class="${i<(g.done?.length||0)?'done':i===(g.done?.length||0)?'next':''}"></i>`).join('');T.style.display=g.page==='play'?'grid':'none';T.querySelectorAll('button').forEach(b=>{b.classList.toggle('active',b.dataset.v===g.role);b.classList.toggle('coach-target',g.page==='play'&&g.guide&&(g.guide.stage==='intro'?b.dataset.v==='B':g.guide.stage==='viewB'&&b.dataset.v==='A'))});M.innerHTML=(g.page==='play'&&g.guide?.stage==='intro')?`<div class="modal"><div class="modalin coach" role="dialog" aria-modal="true" aria-label="首次游玩引导"><div style="font-size:43px">🧭</div><h2>先认识 A / B 两个面板</h2><div class="coach-steps"><span>① 看线索</span>→<span>② 解谜操作</span></div><p style="text-align:left">${tutorialText(g.part)}</p>${btn('guideB','👀 带我去 B · 情报','primary')}${btn('guideSkip','我已经明白 · 跳过')}</div></div>`:g.taunt?`<div class="modal"><div class="modalin"><div style="font-size:52px">😏</div><h2>连续6次没进展？</h2><p>本局有简单模式哦！实在不行，就去小孩那桌玩吧～</p>${box('坚持经典成功，获得「嘴硬王者」额外300分。','gold')}${btn('defy','😤 我偏不，继续挑战','primary')}${btn('easy','切换简单模式','easybtn')}</div></div>`:'';
-if(g.page==='menu'){C.textContent='MISSION / YOUR PLAYER ID';V.innerHTML=(receivedInvite?'<div class="friend-invite">📩 <b>'+esc(receivedInvite.from)+'</b> 向你发起挑战！<br>TA 的成绩：<b>'+receivedInvite.score+'分</b>。每次开局都是随机新关卡，快来超越TA！</div>':'')+'<div class="identity-card"><div class="identity-kicker">👤 第一步 · 请先填写玩家昵称</div><label for="rName">🏷️ 你的玩家昵称</label><div class="identity-help">排行榜会展示这个名字。先填写昵称，再开始拆弹挑战！</div><input id="rName" maxlength="12" autocomplete="nickname" placeholder="点击这里，为自己取个名字" value="'+(nickname?esc(nickname):'')+'"><div id="rNameWarn" class="name-warning" role="alert">⚠️ 请先填写昵称，才能开始游戏！</div></div><div class="hero compact"><div class="emoji">💣</div><h2>拆弹行动 · 危机任务</h2><p>四道机关 · A/B双面板 · 通关排行榜</p></div>';F.innerHTML='<div class="auto-code">🎲 <b>六位任务码由系统随机生成</b><br>每次开始或再挑战都会换一套新关卡，玩家无法手动选择。</div>'+btn('classic','⚡ 开始经典挑战 · 5分钟','primary')+btn('simple','🧩 开始简单挑战 · 6分30秒','easybtn')+box('经典与简单模式都需要自己推理；简单模式不会直接公布答案。','gold')+btn('rank','🏆 排行榜');return}
-if(g.page==='rank'){C.textContent='ALL PLAYERS / ONE RANKING';const online=cloudState==='ready',rows=online?cloudRows:ranked();V.innerHTML='<div class="hero"><div class="emoji">🏆</div><h2>'+(online?'多人在线总排行榜':'本地试玩排行榜')+'</h2></div>'+box(cloudMessage,online?'green':'gold')+(rows.length?rows.map((x,i)=>`<div class="leader"><span>${['🥇','🥈','🥉'][i]||'#'+(i+1)}</span><span><b>${esc(x.name)}</b><br><small>${esc(x.mode)}</small></span><strong>${x.score}</strong></div>`).join(''):box(online?'暂时还没有玩家提交成绩，快来抢第一！':'本机尚无通关成绩。'));F.innerHTML=btn('refreshCloud','🔄 刷新多人榜','primary')+box(online?'在线排行榜同步了不同设备的成绩；同一个匿名玩家身份只保留自己的最高分。':'当前显示的是本机成绩。若要启用全服排名，须先完成 Supabase 数据库配置。')+btn('back','返回游戏');return}
+function render(){H.innerHTML=g.started?`<div><small>拆弹倒计时</small><strong id="rTime">${fmt(g.left)}</strong></div><div style="text-align:right"><small>${esc(g.name)}<br>完成 ${g.done.length}/4<br>🛡️ ${g.shields}　🔍 ${g.intel}</small></div>`:'<div><small>MISSION TIME</small><strong>拆弹行动</strong></div><small>V16.3</small>';P.innerHTML=[0,1,2,3].map(i=>`<i class="${i<(g.done?.length||0)?'done':i===(g.done?.length||0)?'next':''}"></i>`).join('');T.style.display=g.page==='play'?'grid':'none';T.querySelectorAll('button').forEach(b=>{b.classList.toggle('active',b.dataset.v===g.role);b.classList.toggle('coach-target',g.page==='play'&&g.guide&&(g.guide.stage==='intro'?b.dataset.v==='B':g.guide.stage==='viewB'&&b.dataset.v==='A'))});M.innerHTML=(g.page==='play'&&g.guide?.stage==='intro')?`<div class="modal"><div class="modalin coach" role="dialog" aria-modal="true" aria-label="首次游玩引导"><div style="font-size:43px">🧭</div><h2>先认识 A / B 两个面板</h2><div class="coach-steps"><span>① 看线索</span>→<span>② 解谜操作</span></div><p style="text-align:left">${tutorialText(g.part)}</p>${btn('guideB','👀 带我去 B · 情报','primary')}${btn('guideSkip','我已经明白 · 跳过')}</div></div>`:g.taunt?`<div class="modal"><div class="modalin"><div style="font-size:52px">😏</div><h2>连续6次没进展？</h2><p>本局有简单模式哦！实在不行，就去小孩那桌玩吧～</p>${box('坚持经典成功，获得「嘴硬王者」额外300分。','gold')}${btn('defy','😤 我偏不，继续挑战','primary')}${btn('easy','切换简单模式','easybtn')}</div></div>`:'';
+if(g.page==='menu'){C.textContent='MISSION / YOUR PLAYER ID';V.innerHTML=(receivedInvite?'<div class="friend-invite">📩 <b>'+esc(receivedInvite.from)+'</b> 向你发起挑战！<br>TA 的成绩：<b>'+receivedInvite.score+'分</b>。每次开局都是随机新关卡，快来超越TA！</div>':'')+'<div class="identity-card"><div class="identity-kicker">👤 第一步 · 请先填写玩家昵称</div><label for="rName">🏷️ 你的玩家昵称</label><div class="identity-help">排行榜会展示这个名字。先填写昵称，再开始拆弹挑战！</div><input id="rName" maxlength="12" autocomplete="nickname" placeholder="点击这里，为自己取个名字" value="'+(nickname?esc(nickname):'')+'"><div id="rNameWarn" class="name-warning" role="alert">⚠️ 请先填写昵称，才能开始游戏！</div></div><div class="hero compact"><div class="emoji">💣</div><h2>拆弹行动 · 危机任务</h2><p>四道机关 · A/B双面板 · 通关排行榜</p></div>';F.innerHTML='<div class="auto-code">🎲 <b>六位任务码由系统随机生成</b><br>每次开始或再挑战都会换一套新关卡，玩家无法手动选择。</div>'+(isRookie()?'<div class="rookie-hint">🌟 <b>第一次玩？推荐从简单模式开始！</b><br>先熟悉 A/B 解谜规则，等上手后再挑战经典模式，体验更好。</div>':'')+btn('simple',isRookie()?'🌟 新手第一局 · 开始简单模式':'🧩 简单模式 · 6分30秒','primary')+btn('classic','⚡ 经典挑战 · 5分钟','easybtn')+box('建议新玩家先玩简单模式；经典模式更烧脑，熟悉玩法后再挑战。','gold')+btn('rank','🏆 排行榜');return}
+if(g.page==='rank'){
+ C.textContent='ALL PLAYERS / ONE RANKING';
+ const online=cloudState==='ready',rows=online?cloudRows:ranked();
+ V.innerHTML='<div class="hero"><div class="emoji">🏆</div><h2>'+(online?'全部玩家排行榜':'本地试玩排行榜')+'</h2></div>'+
+ box(cloudMessage,online?'green':'gold')+
+ (rows.length?`<div class="rankcount">${online?'当前显示 '+rows.length+' / '+cloudCount+' 位玩家 · ':'本机共 '+rows.length+' 位玩家 · '}排名按最高分排序</div>`+
+ rows.map((x,i)=>`<div class="leader"><span>${['🥇','🥈','🥉'][i]||'#'+(i+1)}</span><span><b class="${x.name===nickname?'your-rank':''}">${esc(x.name)}</b><br><small>${esc(x.mode)}</small></span><strong>${x.score} 分</strong></div>`).join(''):
+ box(online?'目前还没有玩家提交成绩，快来抢第一！':'本机尚无通关成绩。'));
+ F.innerHTML=(online&&cloudRows.length<cloudCount?btn('moreCloud',cloudLoadingMore?'正在加载…':'📋 查看更多玩家（剩余 '+(cloudCount-cloudRows.length)+' 人）','primary'):'')+
+ btn('refreshCloud','🔄 刷新所有玩家成绩','primary')+
+ box(online?'不同手机和电脑的成绩汇总在这里。每个玩家身份保留自己的最高分；其他玩家的成绩也都会列出，人数多时可以点击“查看更多”。':'当前显示的是本机成绩，联网后会自动切换到共享榜单。')+btn('back','返回游戏');return}
 if(g.page==='win'||g.page==='lose'){let win=g.page==='win';C.textContent='MISSION RESULT';V.innerHTML=`<div class="celebrate"><div class="emoji">${win?'🏆':'💥'}</div><h2>${win?'全部拆弹成功！':'任务失败'}</h2><div class="points">${win?g.final:points()} 分</div><p>${win?('本机排名第 '+g.rank+' 名。'+(cloudLatestSubmit?' · '+esc(cloudLatestSubmit):'')):'倒计时已归零，本局不计入排名。'}</p></div>${g.black.king?box('🏆 嘴硬王者 +300分','gold'):''}`;F.innerHTML=(win?`<div class="invite-card"><h3>🎯 邀请好友挑战</h3><p class="invite-sub">你拿到了 <b>${g.final}分</b>！分享战绩，让好友来超越你，争夺在线排行榜名次。</p><label for="rInviteUrl" style="font-size:12px;color:#c9f4e4">专属挑战链接（可直接复制）</label><textarea class="invite-link" id="rInviteUrl" rows="3" readonly aria-label="挑战邀请链接">${inviteAttrEsc(makeInviteLink())}</textarea><div class="invite-actions">${button('inviteShare','📤 直接分享','')}${button('inviteCopy','🔗 复制链接','')}</div><div class="invite-status" id="rInviteNotice" role="status" aria-live="polite"></div><p class="invite-note">好友打开链接即可开始；每人会获得随机任务，不会重复固定关卡。</p></div>`:'')+(win?btn('retryCloud','☁️ 重新上传线上成绩',''):'')+btn('rank','🏆 查看排行榜','primary')+btn('again','🎲 再挑战一次 · 全新关卡')+btn('home','返回大厅 · 切换难度');return}
 if(g.page==='clear'){C.textContent='✓ MODULE CLEAR';V.innerHTML=`<div class="celebrate"><div class="emoji">✅</div><h2>${NAMES[g.last]}通关成功！</h2><p>${g.last==='color'?'恭喜你成功校准了彩灯！':g.last==='black'?'恭喜你破解了黑箱密码！':'恭喜你连接好了电池！'}</p><div class="points">+${g.gain} 分</div></div>${box('已完成 '+g.done.length+'/4 关。后续故障是新事件，不代表刚才失败。','green')}`;F.innerHTML=btn('afterClear','✅ 领取通关奖励 · 继续','primary')+'<p style="text-align:center">此刻暂停倒计时</p>';return}
 if(g.page==='event'){let z={battery:['备用电池突然过载','接入电池：获得25秒，拉闸少4秒','保留电池：拉闸加5秒'],leak:['冷却液突然泄漏','花12秒修复，获得保护','忽略泄漏，拉闸少5秒'],signal:['通讯突然出现干扰','花10秒修复，获得情报','冒险继续，扣85分'],alarm:['安全警报突然启动','花12秒关闭，获得120分','忽略警报，扣40分']}[g.event];C.textContent='SUCCESS → NEW CRISIS';V.innerHTML=box('🎉 恭喜！'+NAMES[g.last]+'已经通关！','green')+`<h3>⚠️ 不过可惜，${z[0]}了！</h3><p>这是一段新剧情，不是上一关失败。选择处理方法：</p>`+btn('event0',z[1],'btn primary')+btn('event1',z[2],'btn');F.innerHTML='<p>上一关的奖励已经领取，这个事件会影响后续拆弹。</p>';return}
@@ -206,20 +299,20 @@ if(g.page==='map'){let left=['color','black','volt'].filter(x=>!g.done.includes(
 if(g.page==='keyclear'){let first=g.key.phase==='firstClear';C.textContent='✓ KEY VERIFIED';V.innerHTML=`<div class="celebrate"><div class="emoji">${first?'🔓':'🎉'}</div><h2>${first?'主密钥验证成功！':'两枚真密钥全部正确！'}</h2><p>${first?'第一轮已经真正通过！下一轮是新的副密钥判断，不用重做第一题。':'主密钥、副密钥已经全部解锁，准备同步脉冲。'}</p></div><div class="rounds"><div class="done">✓ 第一轮</div><div class="${first?'':'done'}">${first?'② 等待第二轮':'✓ 第二轮'}</div></div>${box('✅ 成功反馈显示期间，倒计时暂停。','green')}`;F.innerHTML=btn(first?'nextKey':'nextPulse',first?'✅ 领取奖励 · 开始第2轮':'⚡ 进入三次脉冲同步','primary');return}
 if(g.page!=='play')return;C.textContent=NAMES[g.part]+' / '+(g.role==='A'?'操作面板':'情报面板');let easy=g.easy[g.part],hint=box(easy?'🧩 简单模式 · A/B依然需要推理':'⚡ 经典挑战 · 完整难度 / 分数较高','green'),msg=g.notice?box(g.notice):'';if(g.guide?.stage==='viewB'&&g.role==='B')hint='<div class="coach-banner">✅ <b>已找到 B 面板！</b><br>'+ (g.part==='black'?'这里可以填写和检测符号。需要查线索或看检测报告时，点击下方高亮的 A · 操作。':'先观察这里的线索或目标，再点击下方高亮的 A · 操作完成机关。')+'</div>'+hint;
 if(g.part==='color'){let c=g.color;V.innerHTML=hint+(g.role==='A'?'<h3>当前彩灯</h3>'+lamps(c.mask)+`<div class="switches">${COLORS.map((x,i)=>button('color',`<b>${x}色开关</b><small>影响${c.edges[i].map(j=>COLORS[j]).join('、')}灯</small>`,'',i)).join('')}</div>`+box('已操作 '+c.moves+' 次。'): '<h3>目标彩灯</h3>'+lamps(c.target)+box('让A面板的彩灯亮灭与目标完全一致。','gold'))+msg;F.innerHTML='<p>彩灯连锁：部分开关会同时影响两盏灯。通关后可获得失误保护。</p>'}
-if(g.part==='black'){let b=g.black;if(g.role==='A')V.innerHTML=hint+`<h3>符号线索</h3>`+props([`从${easy?'4':'5'}个候选符号中选择3个。`,`密码一定包含 <b>${GL[b.inc]}</b>。`,`密码一定不包含 <b>${GL[b.exc]}</b>。`])+'<h3>绿色检测报告</h3>'+reports()+box('连续没进展 '+b.stalls+'/6 次')+msg;else V.innerHTML=hint+`<div class="slots">${b.slots.map((x,i)=>button('slot',x===null?'＋':GL[x],(b.focus===i?'selected ':'')+(x!==null?'filled':''),i)).join('')}</div><div class="chips">${(easy?b.easyPool:b.pool).map(i=>button('chip',GL[i],b.slots.includes(i)?'used':'',i)).join('')}</div>`+btn('submit','🔎 提交密码检测','primary')+box('↩️ <b>点一下上方已放入的符号，就能直接撤回</b>；下方同一个符号再点一次也能撤回。先点空槽可指定填入位置。','revert-hint')+msg;F.innerHTML='<p>A提供线索和检测报告，B填写和交换符号。成功解出三个位置即可通关。</p>'}
+if(g.part==='black'){let b=g.black;if(g.role==='A')V.innerHTML=hint+`<h3>符号线索</h3>`+props([`从${easy?'4':'5'}个候选符号中选择3个。`,`密码一定包含 <b>${GL[b.inc]}</b>。`,`密码一定不包含 <b>${GL[b.exc]}</b>。`])+'<h3>绿色检测报告</h3>'+reports()+box('连续没进展 '+b.stalls+'/6 次')+msg;else V.innerHTML=hint+`<div class="slots">${b.slots.map((x,i)=>button('slot',x===null?'＋':GL[x],(b.focus===i?'selected ':'')+(x!==null?'filled':''),i)).join('')}</div><div class="chips">${(easy?b.easyPool:b.pool).map(i=>button('chip',GL[i],b.slots.includes(i)?'used':'',i)).join('')}</div>`+btn('submit','🔎 提交密码检测','primary')+box('👆 <b>点一下已填入的符号，可以撤回</b>；<b>长按并拖到任何密码槽，可直接交换位置</b>。电脑也能按住鼠标拖动；下方符号还能拖进上方槽。','revert-hint')+msg;F.innerHTML='<p>A提供线索和检测报告，B填写和交换符号。成功解出三个位置即可通关。</p>'}
 if(g.part==='volt'){let v=g.volt;if(g.role==='A')V.innerHTML=hint+'<h3>当前三芯电压</h3>'+`<div class="cores">${v.values.map((n,i)=>`<div class="core"><small>核心${'ABC'[i]}</small><strong>${n}</strong></div>`).join('')}</div><div class="cores">${v.knobs.map((n,i)=>`<div class="core"><small>注入器${i+1}</small><strong>${n}/2</strong>${button('minus','−','',i)}${button('plus','＋','',i)}<small>${v.links[i].map(j=>'ABC'[j]).join('＋')}</small></div>`).join('')}</div>`+msg;else {let [a,b,c]=v.goal;V.innerHTML=hint+'<h3>目标电压线索</h3>'+props([`三路合计 <b>${a+b+c}</b> 格。`,`核心A与B合计 <b>${a+b}</b> 格。`,a===b?'A与B目标相同。':`A比B${a>b?'高':'低'} <b>${Math.abs(a-b)}</b> 格。`,...(easy?[`辅助线索：C目标为 <b>${c}</b> 格。`]:[])])+msg}F.innerHTML='<p>每个注入器会同时影响两路电压，目标同时达到才算成功。</p>'}
 if(g.part==='key'){let k=g.key;if(k.phase==='choose'){let round=k.rounds[k.round],wait=cooldown(),cards=easy?[k.deck[round.answer],...k.deck.filter(x=>x.id!==round.answer&&!k.locked.includes(x.id)).slice(0,3)]:k.deck;if(g.role==='A')V.innerHTML=hint+box(`第${k.round+1}/2轮 · 错误后冷却3秒、4秒、5秒……`)+`<div class="box" id="rCooldown">${wait>0?'冷却中 '+wait.toFixed(1)+'秒':'验证设备就绪'}</div><div class="keys">${cards.map(x=>button('pick',`<small>#${x.id+1}</small><span class="seal c${x.c}">${SY[x.sh]}</span><small>${KC[x.c]}色 · ${SH[x.sh]}</small><small>${x.mark}条刻痕</small>`,'key'+(k.selected===x.id?' sel':''),x.id).replace('<button','<button'+(k.locked.includes(x.id)||wait>0?' disabled':''))).join('')}</div>`+msg;else V.innerHTML=hint+`<div class="rounds"><div class="${k.round?'done':''}">${k.round?'✓':'①'} 主密钥</div><div>② 副密钥</div></div>${box(`六枚密钥中，真正的密钥在下面三条判断里，恰好有 <span class="truth">${round.want} 条为真</span>。`,'gold')}`+props(round.rules)+box(k.selected===null?'请到A选择一枚密钥。':'A已经选中了第'+(k.selected+1)+'枚密钥。')+btn('verify',wait>0?'等待冷却':'验证这枚密钥','primary')+msg;F.innerHTML='<p>经典难度要根据真假判断推理正确密钥。验证失败会进入逐次增长的冷却。</p>'}
 if(k.phase==='pulse'){V.innerHTML=hint+(g.role==='B'?`<h3>⚡ 三次脉冲同步</h3><div class="pulseCount">${[0,1,2].map(i=>`<b class="${i<k.pulse?'hit':''}">${i<k.pulse?'✓':'○'}</b>`).join('')}</div>${feedbackBar()}${box('指针进入绿色区域时点击下面的按钮。')}<div class="meter"><span class="safe" ${easy?'style="left:30%;width:40%"':''}></span><span class="needle" id="rNeedle" style="left:${needle()*100}%"></span></div>${btn('pulse','⚡ 点击同步 '+k.pulse+'/3','primary')}`:box('请切换到B情报面板，在绿色安全区内完成三次脉冲同步。'))+msg;F.innerHTML='<p>命中后立即显示绿色✅，三次独立计数。绿色边界以画面显示为准。</p>'}
 if(k.phase==='cut'){let rem=Math.max(0,k.window-(Date.now()-k.leverAt)/1000);V.innerHTML=hint+(g.role==='B'?`<h3>正确断电顺序</h3><div class="count" id="rCut">${rem.toFixed(1)}s</div>${box(k.order.map(i=>KC[i]+'色').join(' → '),'green')}${box('同步已完成！现在切换A面板，按顺序点击线路。','green')}`:`<h3>最终断电 · 按顺序操作</h3><div class="count" id="rCut">${rem.toFixed(1)}s</div>${feedbackBar()}<div class="cutProgress">已切断 ${k.cuts}/3 条线路　${[0,1,2].map(i=>i<k.cuts?'✅':'⬜').join('　')}</div><div class="wires">${KC.map((x,i)=>button('cut',k.order.slice(0,k.cuts).includes(i)?'✅ '+x+'色线 已切断':'✂️ '+x+'色线',k.order.slice(0,k.cuts).includes(i)?'cut':'',i).replace('<button','<button'+(k.order.slice(0,k.cuts).includes(i)?' disabled':''))).join('')}</div>`)+msg;F.innerHTML='<p>点中正确线路会立刻显示绿色✅并更新 1/3、2/3、3/3；已经切断的线路不能重复点击。</p>'}}
 if(!easy)F.innerHTML+=btn('easy','🧩 切换简单模式','easybtn');}
 R.addEventListener('pointerdown',e=>{const target=e.target.closest('button[data-a="pulse"]');if(!target||!R.contains(target))return;const hit=hitAtPress();pulseDown={time:Date.now(),hit};},{passive:true});
-R.addEventListener('click',e=>{let x=e.target.closest('button[data-a]');if(!x||!R.contains(x))return;let a=x.dataset.a,v=x.dataset.v,i=+v;if(a==='guideB'){tutorialGoB();return}if(a==='guideSkip'){tutorialSkip();return}if(a==='inviteShare'&&g.page==='win'){shareInviteLink();return}if(a==='inviteCopy'&&g.page==='win'){copyInviteLink();return}if(a==='home'){if(timer)clearInterval(timer);timer=null;g={page:'menu'};render();return}if(g.taunt){if(a==='defy'){g.taunt=false;g.black.defied=true;render()}else if(a==='easy'){g.taunt=false;easyMode()}return}if(a==='rank'){if(g.page==='rank')return;back=g.page;wasFrozen=!!g.frozen;if(g.started)freeze();g.page='rank';render();cloudFetch();return}if(a==='refreshCloud'&&g.page==='rank'){cloudFetch();return}if(a==='retryCloud'&&g.page==='win'){cloudSave({name:nickname,score:g.final,mode:g.usedEasy?'含简单':'全程经典'});return}if(a==='back'){g.page=back;if(!wasFrozen)resume();render();return}if(a==='classic'||a==='simple'){let n=E('rName');let name=n?.value.trim().slice(0,12)||'';if(!name){let w=E('rNameWarn');if(w)w.classList.add('visible');n?.focus();return}nickname=name;rememberNickname(nickname);begin(a==='simple');return}if(a==='again'||a==='new'){begin(g.allEasy);return}if(a==='afterClear'&&g.page==='clear'){resume();g.page=g.event?'event':'map';render();return}if((a==='event0'||a==='event1')&&g.page==='event'){crisis(a==='event0'?0:1);return}if(a==='choose'&&g.page==='map'){g.part=v;g.role='A';g.notice='';g.page='play';g.guide=learned(v)?null:{part:v,stage:'intro'};if(g.guide)freeze();render();return}if(a==='nextKey'&&g.page==='keyclear'){resume();g.key.phase='choose';g.page='play';g.role='A';render();return}if(a==='nextPulse'&&g.page==='keyclear'){resume();g.key.phase='pulse';g.key.pulseAt=Date.now();g.page='play';g.role='B';render();return}if(g.page!=='play')return;if(a==='tab'){if(g.guide?.stage==='intro'&&v==='B'){tutorialGoB();return}if(g.guide?.stage==='viewB'&&v==='A'){endGuide();g.notice='🎉 新手引导完成！以后可以自由切换 A / B 解谜。'}g.role=v;render();return}if(a==='easy'){easyMode();return}if(g.part==='color'&&a==='color'&&g.role==='A'){colorPress(i);return}if(g.part==='black'){if(a==='slot'&&g.role==='B')slot(i);if(a==='chip'&&g.role==='B')chip(i);if(a==='submit'&&g.role==='B')submit();return}if(g.part==='volt'&&g.role==='A'){if(a==='minus')adjust(i,-1);if(a==='plus')adjust(i,1);return}if(g.part==='key'){let k=g.key;if(k.phase==='choose'){if(a==='pick'&&g.role==='A'&&!k.locked.includes(i)&&cooldown()===0){k.selected=i;render()}if(a==='verify'&&g.role==='B')verify();return}if(k.phase==='pulse'&&a==='pulse'&&g.role==='B'){pulse();return}if(k.phase==='cut'&&a==='cut'&&g.role==='A'){cut(i);return}}});render();
+R.addEventListener('click',e=>{let x=e.target.closest('button[data-a]');if(!x||!R.contains(x))return;let a=x.dataset.a,v=x.dataset.v,i=+v;if(a==='guideB'){tutorialGoB();return}if(a==='guideSkip'){tutorialSkip();return}if(a==='inviteShare'&&g.page==='win'){shareInviteLink();return}if(a==='inviteCopy'&&g.page==='win'){copyInviteLink();return}if(a==='home'){if(timer)clearInterval(timer);timer=null;g={page:'menu'};render();return}if(g.taunt){if(a==='defy'){g.taunt=false;g.black.defied=true;render()}else if(a==='easy'){g.taunt=false;easyMode()}return}if(a==='rank'){if(g.page==='rank')return;back=g.page;wasFrozen=!!g.frozen;if(g.started)freeze();g.page='rank';render();cloudFetch();return}if(a==='refreshCloud'&&g.page==='rank'){cloudFetch();return}if(a==='moreCloud'&&g.page==='rank'){cloudFetchMore();return}if(a==='retryCloud'&&g.page==='win'){cloudSave({name:nickname,score:g.final,mode:g.usedEasy?'含简单':'全程经典'});return}if(a==='back'){g.page=back;if(!wasFrozen)resume();render();return}if(a==='classic'||a==='simple'){let n=E('rName');let name=n?.value.trim().slice(0,12)||'';if(!name){let w=E('rNameWarn');if(w)w.classList.add('visible');n?.focus();return}nickname=name;rememberNickname(nickname);begin(a==='simple');return}if(a==='again'||a==='new'){begin(g.allEasy);return}if(a==='afterClear'&&g.page==='clear'){resume();g.page=g.event?'event':'map';render();return}if((a==='event0'||a==='event1')&&g.page==='event'){crisis(a==='event0'?0:1);return}if(a==='choose'&&g.page==='map'){g.part=v;g.role='A';g.notice='';g.page='play';g.guide=learned(v)?null:{part:v,stage:'intro'};if(g.guide)freeze();render();return}if(a==='nextKey'&&g.page==='keyclear'){resume();g.key.phase='choose';g.page='play';g.role='A';render();return}if(a==='nextPulse'&&g.page==='keyclear'){resume();g.key.phase='pulse';g.key.pulseAt=Date.now();g.page='play';g.role='B';render();return}if(g.page!=='play')return;if(a==='tab'){if(g.guide?.stage==='intro'&&v==='B'){tutorialGoB();return}if(g.guide?.stage==='viewB'&&v==='A'){endGuide();g.notice='🎉 新手引导完成！以后可以自由切换 A / B 解谜。'}g.role=v;render();return}if(a==='easy'){easyMode();return}if(g.part==='color'&&a==='color'&&g.role==='A'){colorPress(i);return}if(g.part==='black'){if(a==='slot'&&g.role==='B')slot(i);if(a==='chip'&&g.role==='B')chip(i);if(a==='submit'&&g.role==='B')submit();return}if(g.part==='volt'&&g.role==='A'){if(a==='minus')adjust(i,-1);if(a==='plus')adjust(i,1);return}if(g.part==='key'){let k=g.key;if(k.phase==='choose'){if(a==='pick'&&g.role==='A'&&!k.locked.includes(i)&&cooldown()===0){k.selected=i;render()}if(a==='verify'&&g.role==='B')verify();return}if(k.phase==='pulse'&&a==='pulse'&&g.role==='B'){pulse();return}if(k.phase==='cut'&&a==='cut'&&g.role==='A'){cut(i);return}}});render();
 if(onlineConfigOK)window.addEventListener('load',()=>cloudFetch(),{once:true});
 })();
 </script>
 </div>
-</div><aside class="side"><div class="sidecard"><h2>⚡ 五分钟危机挑战</h2><p>你和朋友能在爆炸前拆掉全部四道机关吗？操作台 A 和情报台 B 掌握不同线索，请靠自己推理通关。</p><div class="feature"><b>🎨 颜色连锁</b><span>通过联动开关恢复灯光目标</span></div><div class="feature"><b>🔐 符号黑箱</b><span>用绿色检测报告推导三位密码</span></div><div class="feature"><b>⚡ 三芯共振</b><span>按线索调整电压和注入器</span></div><div class="feature"><b>🗝️ 真假密钥</b><span>两轮真假判断、脉冲同步、最终断电</span></div><p class="note">电脑端可以使用鼠标操作，手机端可以直接触屏点击。经典模式和简单模式均可玩。</p><button class="sharebtn" id="shareDesktop">邀请好友随机挑战</button></div><div class="sidecard"><h2>🏆 好友比拼小提示</h2><p>每位玩家开始游戏时系统都会生成全新六位任务码。建议朋友选择相同难度比较成绩。</p><p class="note">在线排行榜开启时会同步不同设备的成绩；断网时仍保留本机记录。</p></div></aside></div>
-<div class="tip">© 拆弹行动 · 本站为独立的轻量网页游戏。无需安装；成绩可同步到在线排行榜，网络不可用时仍保留本机记录。</div>
+</div><aside class="side"><div class="sidecard"><h2>⚡ 五分钟危机挑战</h2><p>你和朋友能在爆炸前拆掉全部四道机关吗？操作台 A 和情报台 B 掌握不同线索，请靠自己推理通关。</p><div class="feature"><b>🎨 颜色连锁</b><span>通过联动开关恢复灯光目标</span></div><div class="feature"><b>🔐 符号黑箱</b><span>用绿色检测报告推导三位密码</span></div><div class="feature"><b>⚡ 三芯共振</b><span>按线索调整电压和注入器</span></div><div class="feature"><b>🗝️ 真假密钥</b><span>两轮真假判断、脉冲同步、最终断电</span></div><p class="note">电脑端可以使用鼠标操作，手机端可以直接触屏点击。经典模式和简单模式均可玩。</p><button class="sharebtn" id="shareDesktop">把同一道任务发给朋友</button></div><div class="sidecard"><h2>🏆 好友比拼小提示</h2><p>每位玩家开始游戏时系统都会生成全新六位任务码。建议朋友选择相同难度比较成绩。</p><p class="note">在线排行榜开启时会同步不同设备的成绩；断网时仍保留本机记录。</p></div></aside></div>
+<div class="tip">© 拆弹行动 · 本站为独立的轻量网页游戏。无需安装；联网时成绩尝试同步到在线排行榜，断网时保留本机成绩。</div>
 <script>
 (function(){
 const buttons=[document.getElementById('shareGame'),document.getElementById('shareDesktop')].filter(Boolean);
