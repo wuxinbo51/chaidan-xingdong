@@ -11,19 +11,19 @@ header{flex-wrap:wrap}header small{max-width:400px}nav{flex-wrap:wrap}.page-pick
 /* Same approved raster keycap, in both the tray and the sockets. */
 .symbol-key{display:block;position:absolute;inset:0;background-image:var(--art-board-2);background-repeat:no-repeat;pointer-events:none;user-select:none;-webkit-user-drag:none}
 .symbol-console .black-slot{padding:0;outline-offset:1px;-webkit-touch-callout:none;cursor:grab}
-.symbol-console .black-slot .symbol-key{inset:2% 5% 0;border-radius:3cqw;filter:drop-shadow(0 .6cqw .5cqw #0005)}
+.symbol-console .black-slot .symbol-key{inset:auto;left:50%;top:50%;translate:-50% -50%;width:83%;height:auto;aspect-ratio:var(--key-ratio);clip-path:inset(0 round 22%);filter:drop-shadow(0 .45cqw .4cqw #0005)}
 .symbol-console .socket-placeholder{color:#9faaa9;font-size:3.7cqw;font-weight:700;letter-spacing:.3cqw;text-shadow:0 1px 2px #0008;pointer-events:none}
 .symbol-console .black-slot.focus,.symbol-console .black-slot.drop-ready{outline:2px solid #5af6ed;box-shadow:inset 0 0 14px #35dace66,0 0 15px #47f8ed99}
 .symbol-console .black-slot.drop-ready:after{content:'松手放入';position:absolute;bottom:-4cqw;left:0;width:100%;text-align:center;font-size:2.7cqw;color:#163e45;font-weight:900;background:#baf9e9;border-radius:2cqw;padding:.3cqw;pointer-events:none}
-.symbol-console .chip{top:49.38%;width:15.33%;height:9.36%;border:0;padding:0;touch-action:none;user-select:none;-webkit-touch-callout:none;cursor:grab;background:transparent;transition:filter .15s,transform .15s}
-.symbol-console .chip .symbol-key{border-radius:2.7cqw}
-.symbol-console .chip.is-used .symbol-key{filter:grayscale(1) brightness(.73) contrast(.85);transform:translateY(.5cqw)}
-.symbol-console .chip.is-used{box-shadow:inset 0 .5cqw .8cqw #0003}
+.symbol-console .chip{border:0;padding:0;touch-action:none;user-select:none;-webkit-touch-callout:none;cursor:grab;background:transparent;transition:filter .15s,transform .15s}
+.symbol-console .chip .symbol-key{clip-path:inset(0 round 22%);opacity:0}
+.symbol-console .chip.is-used .symbol-key{opacity:1;filter:grayscale(1) brightness(.77) contrast(.9)}
+.symbol-console .chip.is-used{box-shadow:none}
 .symbol-console .chip:hover{box-shadow:0 0 0 1px #fff3c5,0 0 12px #ffbd4855}
-.symbol-used-mark{position:absolute;right:.3cqw;top:.3cqw;width:3.7cqw;height:3.7cqw;display:grid;place-items:center;background:#d6e2d8;color:#293a3b;border:1px solid #f5f4df;border-radius:50%;font-size:2.8cqw;font-weight:900;box-shadow:0 1px 3px #0006;pointer-events:none}
+.symbol-used-mark{position:absolute;right:.5cqw;top:.6cqw;width:3.1cqw;height:3.1cqw;display:grid;place-items:center;background:#d6e2d8;color:#293a3b;border:1px solid #f5f4df;border-radius:50%;font-size:2.4cqw;font-weight:900;box-shadow:0 1px 2px #0005;pointer-events:none}
 .symbol-console .symbol-progress{position:absolute;left:17%;top:28.2%;width:67%;height:3.3%;display:flex;justify-content:center;align-items:center;gap:1cqw;color:#273e47;font-size:3.4cqw;font-weight:750;z-index:3}
 .symbol-progress b{font-size:4cqw}.symbol-progress span{font-size:2.6cqw;margin-left:1.6cqw;color:#586463;font-weight:650}
-.symbol-console .symbol-instruction{position:absolute;left:18.1%;top:61.35%;width:64.5%;height:4.9%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6cqw;background:linear-gradient(130deg,#fff0d2,#ecd0af);border-radius:5cqw;color:#242e32;z-index:2;pointer-events:none;box-shadow:inset 0 1px 1px #fff6}
+.symbol-console .symbol-instruction{position:absolute;left:18.5%;top:61.6%;width:64%;height:4.5%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6cqw;background:linear-gradient(#f8e4c9,#efd3b2);border-radius:3.5cqw;color:#242e32;z-index:2;pointer-events:none}
 .symbol-instruction b{font-size:3.55cqw;line-height:1.15}.symbol-instruction small{font-size:2.5cqw;color:#5a574c;line-height:1.15;font-weight:650}
 .symbol-console.symbol-dragging,.symbol-console.symbol-dragging *{cursor:grabbing!important}
 .symbol-console .is-lifted .symbol-key{opacity:.18}.symbol-console .chip.drop-withdraw{outline:2px solid #74e9e1;outline-offset:-1px}
@@ -32,10 +32,19 @@ header{flex-wrap:wrap}header small{max-width:400px}nav{flex-wrap:wrap}.page-pick
 .symbol-console .black-slot.just-placed .symbol-key{animation:symbolSeat .25s cubic-bezier(.2,.7,.3,1)}
 @keyframes symbolSeat{0%{transform:translateY(-1.4cqw) scale(1.06)}65%{transform:translateY(.6cqw) scale(.97)}100%{transform:none}}
 .stage.symbol-console .symbol-coach{top:44.4%;left:13%;width:75%;font-size:2.65cqw;padding:.7cqw 1.5cqw;line-height:1.35}
-.stage.symbol-console .symbol-point{top:47.15%;right:auto;max-width:23%;font-size:2.7cqw;padding:.3cqw 1cqw;border-radius:1.8cqw}
-.stage.symbol-console .symbol-coach.ready{top:67.1%;font-size:2.7cqw}
-.stage.symbol-console .symbol-point.ready{top:68.8%;left:62%;font-size:2.7cqw}
+.stage.symbol-console .symbol-point{top:47.15%;right:auto;width:18%;text-align:center;font-size:2.7cqw;padding:.3cqw .4cqw;border-radius:1.8cqw;white-space:nowrap}
+.stage.symbol-console .symbol-coach.ready{top:67%;font-size:2.55cqw;min-height:2.8%;padding:.65cqw 25cqw .65cqw 1.5cqw;display:flex;align-items:center}
+.stage.symbol-console .symbol-point.ready{top:67.3%;left:68%;font-size:2.7cqw}
 @media(prefers-reduced-motion:reduce){.symbol-console .chip{transition:none}.symbol-console .black-slot.just-placed .symbol-key{animation:none}}
+/* Match the compact heavy black lettering on the approved console labels. */
+.symbol-console .symbol-progress,.symbol-console .symbol-instruction,.symbol-console .socket-placeholder,.symbol-console .symbol-coach,.symbol-console .symbol-point{font-family:'Noto Sans CJK SC','Source Han Sans SC','Microsoft YaHei','PingFang SC',sans-serif;font-weight:900;color:#19242b;letter-spacing:-.025em}
+.symbol-console .symbol-progress b{font-weight:900;letter-spacing:-.025em;color:#19242b}
+.symbol-console .symbol-progress span{font-weight:800;color:#444d4d}
+.symbol-console .symbol-instruction{background:linear-gradient(130deg,#fce2c2,#edcfb0)}
+.symbol-console .symbol-instruction b{font-size:3.9cqw;font-weight:900;letter-spacing:-.02em;text-shadow:0 .1cqw #fff2d1}
+.symbol-console .symbol-instruction small{font-size:2.55cqw;font-weight:800;color:#4a463c;letter-spacing:-.015em}
+.symbol-console .socket-placeholder{color:#a7afad;font-weight:800;letter-spacing:.03em}
+.symbol-console .symbol-coach,.symbol-console .symbol-point{font-weight:900}
 
 </style><script src="art-assets/refined-boards-v1.js"></script></head><body class="full-preview"><header><div><b>拆弹行动 · 全套精修预览</b><small>全套 20 页 · 美术与操作验收</small></div><nav aria-label="预览界面"><button data-nav="menu" aria-current="true">大厅</button><button data-nav="map">任务</button><button data-nav="color">颜色连锁</button><button data-nav="black">符号黑箱</button><button data-nav="volt">三芯共振</button><button data-nav="key">真假密钥</button></nav><button class="view-size" data-action="phone">手机尺寸</button><label class="page-picker"><span>全部页面</span><select id="pagePicker" aria-label="选择精修页面"><option value="1">01 大厅</option><option value="2">02 任务选择</option><option value="3">03 颜色连锁 A</option><option value="4">04 颜色连锁 B</option><option value="5">05 符号黑箱 A</option><option value="6">06 符号黑箱 B</option><option value="7">07 三芯共振 A</option><option value="8">08 三芯共振 B</option><option value="9">09 真假密钥 A</option><option value="10">10 真假密钥 B</option><option value="11">11 脉冲同步</option><option value="12">12 最终断电</option><option value="13">13 单关成功</option><option value="14">14 危机选择</option><option value="15">15 挑战成功</option><option value="16">16 排行榜</option><option value="17">17 任务失败</option><option value="18">18 好友战报</option><option value="19">19 新手停留提示</option><option value="20">20 练习完成</option></select></label></header><main><div><div class="stage" id="stage"></div><span class="sample-caption">美术验收预览 · 不限时 · 不提交线上成绩</span><div class="mobile-meta"><button data-action="reset">重新体验</button><button data-action="hint">需要一点思路</button></div></div><aside class="note-panel"><span class="eyebrow">ART DIRECTION / INTERACTIVE PREVIEW</span><h1 id="pageTitle">回到你选中的<br>那套卡通科幻界面。</h1><p id="pageDesc">直接使用已确认的原画素材，保留机壳造型、金属厚度、灯带、徽章与按钮光影。点击左侧橙色按钮，即可体验不限时训练。</p><details><summary style="cursor:pointer;color:#a8c9db;font-size:12px">查看全套 20 页</summary><div class="art-view-map"><button data-screen="1">01 大厅</button><button data-screen="2">02 任务选择</button><button data-screen="3">03 颜色连锁 A</button><button data-screen="4">04 颜色连锁 B</button><button data-screen="5">05 符号黑箱 A</button><button data-screen="6">06 符号黑箱 B</button><button data-screen="7">07 三芯共振 A</button><button data-screen="8">08 三芯共振 B</button><button data-screen="9">09 真假密钥 A</button><button data-screen="10">10 真假密钥 B</button><button data-screen="11">11 脉冲同步</button><button data-screen="12">12 最终断电</button><button data-screen="13">13 单关成功</button><button data-screen="14">14 危机选择</button><button data-screen="15">15 挑战成功</button><button data-screen="16">16 排行榜</button><button data-screen="17">17 任务失败</button><button data-screen="18">18 好友战报</button><button data-screen="19">19 新手停留提示</button><button data-screen="20">20 练习完成</button></div></details><div class="rule"></div><div class="step-list"><span>01 大厅</span><span>02 颜色连锁 A / B</span><span>03 符号黑箱 A / B</span></div><div class="status" id="liveStatus" aria-live="polite">这是三个代表界面的可操作验收版。原来的正式游戏网址暂时保持不变。</div><div class="utility"><button data-action="reset">重新体验</button><button data-action="hint">需要一点思路</button><button data-nav="menu">回到大厅</button></div><p style="font-size:12px;color:#8aa9bd">全部页面已按同一标准精修。顶部可逐页查看；条件页面带有验收状态标记。正式游戏原网址保持不变。</p></aside></main><div class="toast" id="toast" role="status" hidden></div><script>
 'use strict';
@@ -70,17 +79,21 @@ if(s.page==='black'){let i=+v;if(a==='chip'){const at=s.slots.indexOf(i);if(at>=
 armIdle();}
 // The selected key is physically moved into a socket; its tray copy stays usable.
 let symbolGesture = null, symbolPulseSlot = null, symbolGestureRAF = 0;
-const symbolTrayCrop = { x: 494, y: 438, w: 68, h: 83, step: 69.5 };
+// Bounds are measured in the approved 1774 × 887 board, not estimated per row.
+const symbolTrayCrop = { w: 64, h: 74 };
+const SYMBOL_CAPS = [496,567,636,705,775].map((x,i)=>({x,y:442,w:i===0?64:63,h:74}));
+const SYMBOL_SOCKETS = [112.5,221.5,331].map(cx=>({x:cx-41.5,y:297,w:83,h:84}));
 function symbolKey(v) {
-  const {x,y,w,h,step} = symbolTrayCrop;
-  return `<span class="symbol-key" aria-hidden="true" style="background-size:${1774/w*100}% ${887/h*100}%;background-position:${(x+step*v)/(1774-w)*100}% ${y/(887-h)*100}%"></span>`;
+  const {x,y,w,h} = SYMBOL_CAPS[v];
+  return `<span class="symbol-key" aria-hidden="true" style="--key-ratio:${w}/${h};background-size:${1774/w*100}% ${887/h*100}%;background-position:${x/(1774-w)*100}% ${y/(887-h)*100}%"></span>`;
 }
+const symbolBounds=r=>`left:${r.x/443.5*100}%;top:${r.y/887*100}%;width:${r.w/443.5*100}%;height:${r.h/887*100}%`;
 function renderSymbolControls() {
   stage.classList.add('symbol-console');
   const count=s.slots.filter(v=>v!==null).length;
   return `<div class="symbol-progress" role="status" aria-live="polite">已选 <b>${count}/3</b><span>${count===3?'可以检测了':'选择三个不同符号'}</span></div>`+
-    s.slots.map((v,i)=>`<button class="black-slot s${i} ${v!==null?'has-key':''} ${s.selected===i?'focus':''} ${symbolPulseSlot===i?'just-placed':''}" data-action="slot" data-value="${i}" aria-label="第${i+1}位，${v===null?'空，点击指定填入位置':SYMBOLS[v]+'，点击撤回，拖动交换；左右方向键也可交换'}">${v===null?`<span class="socket-placeholder">第 ${i+1} 位</span>`:symbolKey(v)}</button>`).join('')+
-    SYMBOLS.map((v,i)=>{const at=s.slots.indexOf(i);return `<button class="chip ${at>=0?'is-used':''}" data-action="chip" data-value="${i}" aria-label="${v}，${at>=0?'已在第'+(at+1)+'位，点击撤回或拖动移动':'点击填入，也可直接拖到密码槽'}" aria-pressed="${at>=0}" style="left:${(symbolTrayCrop.x+symbolTrayCrop.step*i-443.5)/443.5*100}%">${symbolKey(i)}${at>=0?'<span class="symbol-used-mark" aria-hidden="true">✓</span>':''}</button>`}).join('')+
+    s.slots.map((v,i)=>`<button class="black-slot s${i} ${v!==null?'has-key':''} ${s.selected===i?'focus':''} ${symbolPulseSlot===i?'just-placed':''}" data-action="slot" data-value="${i}" style="${symbolBounds(SYMBOL_SOCKETS[i])}" aria-label="第${i+1}位，${v===null?'空，点击指定填入位置':SYMBOLS[v]+'，点击撤回，拖动交换；左右方向键也可交换'}">${v===null?`<span class="socket-placeholder">第 ${i+1} 位</span>`:symbolKey(v)}</button>`).join('')+
+    SYMBOLS.map((v,i)=>{const at=s.slots.indexOf(i),r=SYMBOL_CAPS[i];return `<button class="chip ${at>=0?'is-used':''}" data-action="chip" data-value="${i}" aria-label="${v}，${at>=0?'已在第'+(at+1)+'位，点击撤回或拖动移动':'点击填入，也可直接拖到密码槽'}" aria-pressed="${at>=0}" style="${symbolBounds({...r,x:r.x-443.5})}">${symbolKey(i)}${at>=0?'<span class="symbol-used-mark" aria-hidden="true">✓</span>':''}</button>`}).join('')+
     `<div class="symbol-instruction"><b>点选或拖入 · 点上方撤回</b><small>拖到已填槽可替换 · 上方互拖交换</small></div>`+
     hotspot('submit','检测密码，已选'+count+'个符号',15,70.3,71,9.8);
 }
@@ -89,9 +102,10 @@ function commitSymbolSlots(slots, target=null) {
 }
 function symbolHint() {
   const count=s.slots.filter(v=>v!==null).length;
-  if(count===3)return '<div class="coach symbol-coach ready">三个槽已填满，点「检测密码」查看结果。</div><div class="point symbol-point ready">👆 点这里</div>';
+  if(count===3)return '<div class="coach symbol-coach ready">已选满，点下方「检测密码」。</div><div class="point symbol-point ready">👆 点这里</div>';
   const next=SYMBOLS.findIndex((_,i)=>!s.slots.includes(i));
-  return `<div class="coach symbol-coach">${count?'还差 '+(3-count)+' 个。':'选三个不同符号。'}点橙色按键填入，也可直接拖到上方。</div><div class="point symbol-point" style="left:${Math.min(72,Math.max(9,10+next*15.6))}%">👆 点这里</div>`;
+  const cap=SYMBOL_CAPS[next],cx=(cap.x+cap.w/2-443.5)/443.5*100;
+  return `<div class="coach symbol-coach">${count?'还差 '+(3-count)+' 个。':'选三个不同符号。'}点橙色按键填入，也可直接拖到上方。</div><div class="point symbol-point" style="left:${cx-9}%">👆 点这里</div>`;
 }
 function symbolDropTarget(g,x,y) {
   const margin=Math.max(10,g.stageWidth*.025);
@@ -129,9 +143,8 @@ function startSymbolDrag(g) {
 function settleSymbolGhost(g, destination) {
   if(!g.ghost)return;
   const current=g.ghost.getBoundingClientRect();
-  const width=destination.width*.88,height=destination.height*.95;
-  const end={left:(destination.left+(destination.width-width)/2)+'px',top:(destination.top+(destination.height-height)/2)+'px',width:width+'px',height:height+'px',opacity:1};
-  const animation=g.ghost.animate([{left:current.left+'px',top:current.top+'px',width:current.width+'px',height:current.height+'px',opacity:1},end],{duration:matchMedia('(prefers-reduced-motion: reduce)').matches?1:180,easing:'cubic-bezier(.2,.8,.2,1)',fill:'forwards'});
+  const end={left:destination.left+'px',top:destination.top+'px',width:destination.width+'px',height:destination.height+'px',opacity:1,transform:'rotate(0deg)'};
+  const animation=g.ghost.animate([{left:current.left+'px',top:current.top+'px',width:current.width+'px',height:current.height+'px',opacity:1,transform:'rotate(-3deg)'},end],{duration:matchMedia('(prefers-reduced-motion: reduce)').matches?1:180,easing:'cubic-bezier(.2,.8,.2,1)',fill:'forwards'});
   animation.finished.catch(()=>{}).finally(()=>g.ghost.remove());
 }
 function endSymbolGesture(cancelled=false) {
@@ -139,15 +152,15 @@ function endSymbolGesture(cancelled=false) {
   if(stage.hasPointerCapture(g.pointerId))stage.releasePointerCapture(g.pointerId);
   stage.classList.remove('symbol-dragging');g.origin.classList.remove('is-lifted');clearSymbolDrop();
   if(!g.active) {if(!cancelled)action(g.kind,String(g.index));else armIdle();return;}
-  const target=cancelled?null:symbolDropTarget(g,g.x,g.y);let destination=g.originRect;
+  const target=cancelled?null:symbolDropTarget(g,g.x,g.y);let destination=g.originKeyRect;
   if(target?.kind==='slot') {
     const next=[...s.slots],at=target.index;
     if(g.fromSlot>=0)[next[g.fromSlot],next[at]]=[next[at],next[g.fromSlot]];
     else next[at]=g.value;
-    commitSymbolSlots(next,at);destination=stage.querySelector(`.black-slot[data-value="${at}"]`).getBoundingClientRect();
+    commitSymbolSlots(next,at);destination=stage.querySelector(`.black-slot[data-value="${at}"] .symbol-key`).getBoundingClientRect();
   }else if(target?.kind==='tray'&&g.fromSlot>=0) {
     const next=[...s.slots];next[g.fromSlot]=null;commitSymbolSlots(next);
-    destination=stage.querySelector(`.chip[data-value="${g.value}"]`).getBoundingClientRect();
+    destination=stage.querySelector(`.chip[data-value="${g.value}"] .symbol-key`).getBoundingClientRect();
   }else render();
   settleSymbolGhost(g,destination);
 }
@@ -158,7 +171,7 @@ stage.addEventListener('pointerdown',e=>{
   const kind=b.dataset.action,index=+b.dataset.value,value=kind==='slot'?s.slots[index]:index;
   const sockets=[...stage.querySelectorAll('.black-slot')].map((el,index)=>{const r=el.getBoundingClientRect();return {index,left:r.left,right:r.right,top:r.top,bottom:r.bottom,cx:r.left+r.width/2,cy:r.top+r.height/2};});
   const chips=[...stage.querySelectorAll('.chip')].map(el=>el.getBoundingClientRect());
-  symbolGesture={pointerId:e.pointerId,kind,index,value,fromSlot:kind==='slot'?index:s.slots.indexOf(value),origin:b,originRect:b.getBoundingClientRect(),stageWidth:stage.getBoundingClientRect().width,sockets,tray:{left:chips[0].left,right:chips.at(-1).right,top:chips[0].top,bottom:chips[0].bottom},startX:e.clientX,startY:e.clientY,x:e.clientX,y:e.clientY,touch:e.pointerType==='touch',active:false,target:null};
+  symbolGesture={pointerId:e.pointerId,kind,index,value,fromSlot:kind==='slot'?index:s.slots.indexOf(value),origin:b,originRect:b.getBoundingClientRect(),originKeyRect:b.querySelector('.symbol-key')?.getBoundingClientRect()||b.getBoundingClientRect(),stageWidth:stage.getBoundingClientRect().width,sockets,tray:{left:chips[0].left,right:chips.at(-1).right,top:chips[0].top,bottom:chips[0].bottom},startX:e.clientX,startY:e.clientY,x:e.clientX,y:e.clientY,touch:e.pointerType==='touch',active:false,target:null};
   stage.setPointerCapture(e.pointerId);
 });
 stage.addEventListener('pointermove',e=>{
