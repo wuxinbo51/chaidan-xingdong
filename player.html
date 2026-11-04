@@ -315,6 +315,7 @@ stage.addEventListener('pointerdown',e=>{if(e.target.closest('[data-action="sync
 
 document.addEventListener('click',e=>{let control=e.target.closest('.black-slot,.chip');if(control&&s.page==='black'&&s.role==='B'&&e.detail!==0){e.preventDefault();return}let nav=e.target.closest('[data-nav]');if(nav){if(symbolGesture)endSymbolGesture(true);open(nav.dataset.nav);return}let b=e.target.closest('[data-action]');if(b&&!b.disabled)action(b.dataset.action,b.dataset.value)});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&s.modal){s.modal=null;render()}});// Player-facing game flow, layered over the approved controls and artwork.
+mode=function(){return ''};
 const PLAYER_SCORES='defuse-player-scores-v1';
 const baseRender=render,baseAction=action,baseFinish=finishModule;
 let sharedSeed=null;
