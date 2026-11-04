@@ -386,7 +386,7 @@ render=function(){baseRender();
  if(page==='menu'){
  const upper=stage.querySelector('[data-action="start"]'),lower=stage.querySelector('[data-action="timed"]');
  upper.dataset.action='timed';upper.setAttribute('aria-label','计时挑战，五分钟');lower.dataset.action='start';lower.setAttribute('aria-label','新手引导，不限时');
- extra+=`<div class="player-welcome">随机机关 · 五分钟拆弹挑战</div><span class="lobby-primary-label">计时挑战</span><span class="lobby-training-label">新手引导 · 不限时</span>`;
+ extra+=`<span class="lobby-primary-label">计时挑战</span><span class="lobby-training-label">新手引导 · 不限时</span>`;
  }
  if(page==='black'&&s.role==='A'){stage.querySelector('.cluevalue').textContent='＋';stage.querySelector('.cluevalue.exc').textContent='□'}
  if(page==='volt'&&s.role==='B')extra+=playerBoard('核心电压线索',`<p>根据三条情报，推导 A、B、C 的目标电压。</p><ol class="volt-clues">${voltClues(s.voltGoal,s.seed).map(t=>`<li>${t}</li>`).join('')}</ol><p>先推导目标，再回 A 调整注入器。<br>每个注入器影响两路核心，可用减号撤回。</p>`,pb('backDevice','返回设备'));
