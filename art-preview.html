@@ -11,14 +11,14 @@ header{flex-wrap:wrap}header small{max-width:400px}nav{flex-wrap:wrap}.page-pick
 /* Same approved raster keycap, in both the tray and the sockets. */
 .symbol-key{display:block;position:absolute;inset:0;background-image:var(--art-board-2);background-repeat:no-repeat;pointer-events:none;user-select:none;-webkit-user-drag:none}
 .symbol-console .black-slot{padding:0;outline-offset:1px;-webkit-touch-callout:none;cursor:grab}
-.symbol-console .black-slot .symbol-key{inset:auto;left:50%;top:50%;translate:-50% -50%;width:83%;height:auto;aspect-ratio:var(--key-ratio);clip-path:inset(0 round 22%);filter:drop-shadow(0 .45cqw .4cqw #0005)}
+.symbol-console .black-slot .symbol-key{inset:auto;left:50%;top:calc(50% + .28cqw);translate:-50% -50%;width:83%;height:auto;aspect-ratio:var(--key-ratio);clip-path:inset(0 round 22%);filter:drop-shadow(0 .45cqw .4cqw #0005)}
 .symbol-console .socket-placeholder{color:#9faaa9;font-size:3.7cqw;font-weight:700;letter-spacing:.3cqw;text-shadow:0 1px 2px #0008;pointer-events:none}
 .symbol-console .black-slot.focus,.symbol-console .black-slot.drop-ready{outline:2px solid #5af6ed;box-shadow:inset 0 0 14px #35dace66,0 0 15px #47f8ed99}
 .symbol-console .black-slot.drop-ready:after{content:'松手放入';position:absolute;bottom:-4cqw;left:0;width:100%;text-align:center;font-size:2.7cqw;color:#163e45;font-weight:900;background:#baf9e9;border-radius:2cqw;padding:.3cqw;pointer-events:none}
 .symbol-console .chip{border:0;padding:0;touch-action:none;user-select:none;-webkit-touch-callout:none;cursor:grab;background:transparent;transition:filter .15s,transform .15s}
 .symbol-console .chip .symbol-key{clip-path:inset(0 round 22%);opacity:0}
-.symbol-console .chip.is-used .symbol-key{opacity:1;filter:grayscale(1) brightness(.77) contrast(.9)}
-.symbol-console .chip.is-used{box-shadow:none}
+.symbol-console .chip.is-used .symbol-key{opacity:0}
+.symbol-console .chip.is-used{box-shadow:none;border-radius:23%;-webkit-backdrop-filter:grayscale(1) brightness(.78);backdrop-filter:grayscale(1) brightness(.78)}
 .symbol-console .chip:hover{box-shadow:0 0 0 1px #fff3c5,0 0 12px #ffbd4855}
 .symbol-used-mark{position:absolute;right:.5cqw;top:.6cqw;width:3.1cqw;height:3.1cqw;display:grid;place-items:center;background:#d6e2d8;color:#293a3b;border:1px solid #f5f4df;border-radius:50%;font-size:2.4cqw;font-weight:900;box-shadow:0 1px 2px #0005;pointer-events:none}
 .symbol-console .symbol-progress{position:absolute;left:17%;top:28.2%;width:67%;height:3.3%;display:flex;justify-content:center;align-items:center;gap:1cqw;color:#273e47;font-size:3.4cqw;font-weight:750;z-index:3}
